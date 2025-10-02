@@ -2,14 +2,18 @@
 	<title>About - ConceptualMe</title>
 </svelte:head>
 
+<script lang="ts">
+	import PageContainer from '$lib/components/PageContainer.svelte';
+</script>
+<PageContainer>
 <div class="max-w-4xl mx-auto space-y-8">
 	<section class="text-center">
-		<h1 class="text-4xl font-bold mb-4">About ConceptualMe</h1>
+		<h1 class="text-4xl font-bold mb-4">About Conceptual me</h1>
 		<p class="text-xl text-gray-600">Where Learning Meets Inspiration</p>
 	</section>
 
-	<section class="bg-white rounded-lg shadow-md p-8">
-		<img src="https://picsum.photos/seed/about/1200/400" alt="About Us" class="w-full h-64 object-cover rounded-lg mb-6" />
+	<section class="bg-white shadow-md p-8" style="border-radius:0;">
+	<img src="https://picsum.photos/seed/about/1200/400" alt="About Us" class="w-full h-64 object-cover mb-6" style="border-radius:0;" />
 		
 		<div class="space-y-6 text-gray-700">
 			<p class="text-lg">
@@ -38,7 +42,7 @@
 				Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
 			</p>
 
-			<div class="bg-blue-50 border-l-4 border-blue-600 p-6 mt-8">
+			<div class="bg-green-50 border-l-4 border-green-600 p-6 mt-8" style="border-radius:0;">
 				<p class="text-lg italic">
 					"Learning is not about memorizing facts, it's about understanding concepts and applying them creatively."
 				</p>
@@ -53,11 +57,12 @@
 		</div>
 	</section>
 
-	<section class="text-center bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-8">
+	<section class="text-center bg-gradient-to-r from-green-600 to-green-400 text-white p-8" style="border-radius:0;">
 		<h2 class="text-2xl font-bold mb-4">Ready to Learn?</h2>
 		<p class="mb-6">Check out our latest posts and start your learning journey today.</p>
-		<a href="/posts" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+	<a href="/posts" class="inline-block bg-white text-green-600 px-6 py-3 font-semibold hover:bg-green-50 transition" style="border-radius:0;">
 			View All Posts
 		</a>
 	</section>
 </div>
+</PageContainer>

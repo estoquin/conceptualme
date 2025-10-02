@@ -25,6 +25,6 @@
     >
         <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">Welcome to Conceptual me</h1>
         <p class="text-xl md:text-2xl mb-6 text-white drop-shadow">A unique blend of blogging and learning - where knowledge meets creativity</p>
-        <a href="/posts" class="inline-block bg-blue-600 text-white px-16 py-3 font-bold hover:bg-blue-700 transition mb-2">Explorar</a>
+    <a href="/posts" class="inline-block bg-green-600 text-white px-16 py-3 font-bold hover:bg-green-800 transition mb-2" style="border-radius:0;">Explorar</a>
     </div>
 </section>

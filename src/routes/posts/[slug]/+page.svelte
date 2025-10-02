@@ -35,8 +35,8 @@
     </section>
     <footer class="mt-12 pt-8 border-t border-gray-200">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-            <a href="/posts" class="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition">← View All Posts</a>
-            <a href="/contact" class="bg-gray-800 text-white px-6 py-3 font-semibold hover:bg-gray-900 transition">Get in Touch →</a>
+            <a href="/posts" class="bg-green-600 text-white px-6 py-3 font-semibold hover:bg-green-800 transition" style="border-radius:0;">← View All Posts</a>
+            <a href="/contact" class="bg-green-600 text-white px-6 py-3 font-semibold hover:bg-green-800 transition" style="border-radius:0;">Get in Touch →</a>
         </div>
     </footer>
 </article>

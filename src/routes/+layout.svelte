@@ -5,14 +5,15 @@
 	const navLinks = [
 		{ href: '/', label: 'Home' },
 		{ href: '/posts', label: 'Posts' },
+		{ href: '/categories', label: 'Categories' },
 		{ href: '/about', label: 'About' },
 		{ href: '/contact', label: 'Contact' }
 	];
 </script>
-<div class="min-h-screen flex flex-col">
+<div class="h-full w-full flex flex-col">
 	<NavBar {navLinks} />
-	<main class="flex-grow container mx-auto">
+	<main class="flex-grow">
 		{@render children?.()}
 	</main>
-	   <Footer />
+	<Footer />
 </div>

@@ -11,10 +11,22 @@
 	export let post: Post;
 	export let headingLevel: 'h2' | 'h3' = 'h3';
 	export let listMode: boolean = false;
+	export let colorFilter: 'blue' | 'red' | 'green' | 'orange' | 'purple' | 'none' = 'none';
 </script>
-<article class={listMode ? "flex bg-white shadow-md overflow-hidden hover:shadow-xl transition items-center gap-8 md:gap-12" : "bg-white  shadow-md overflow-hidden hover:shadow-xl transition"}>
-	<img src={post.image} alt={post.title} class={listMode ? "w-32 h-32 md:w-48 md:h-48 object-cover flex-shrink-0" : "w-full h-48 object-cover"} />
-	<div class={listMode ? "flex-1 py-6 pr-6 flex flex-col justify-center min-w-0" : "p-6"}>
+<article class={listMode ? "flex bg-white shadow-md overflow-hidden hover:shadow-xl transition items-center gap-8 md:gap-12 group" : "bg-white shadow-md overflow-hidden hover:shadow-xl transition group"}>
+   <div class={listMode ? "relative w-32 h-32 md:w-48 md:h-48 flex-shrink-0 overflow-hidden" : "relative w-full h-48 overflow-hidden"}>
+	   <img src={post.image} alt={post.title} class={listMode ? "w-full h-full object-cover" : "w-full h-full object-cover"} style="border-radius:0;" />
+	   {#if colorFilter !== 'none'}
+		   <div class="absolute inset-0 opacity-60 pointer-events-none" style="border-radius:0;"
+			   class:bg-blue-600={colorFilter === 'blue'}
+			   class:bg-red-600={colorFilter === 'red'}
+			   class:bg-green-600={colorFilter === 'green'}
+			   class:bg-orange-500={colorFilter === 'orange'}
+			   class:bg-purple-600={colorFilter === 'purple'}>
+		   </div>
+	   {/if}
+   </div>
+	<div class={listMode ? "flex-1 py-6 pr-6 flex flex-col justify-center min-w-0" : "p-6"} style="border-radius:0;">
 		{#if headingLevel === 'h2'}
 			<h2 class="text-2xl font-bold mb-2 text-gray-900 truncate">{post.title}</h2>
 		{:else}
