@@ -12,8 +12,8 @@
 	export let headingLevel: 'h2' | 'h3' = 'h3';
 	export let listMode: boolean = false;
 </script>
-<article class={listMode ? "flex bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition items-center gap-8 md:gap-12" : "bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition"}>
-	<img src={post.image} alt={post.title} class={listMode ? "w-32 h-32 md:w-48 md:h-48 object-cover flex-shrink-0 rounded-l-lg" : "w-full h-48 object-cover"} />
+<article class={listMode ? "flex bg-white shadow-md overflow-hidden hover:shadow-xl transition items-center gap-8 md:gap-12" : "bg-white  shadow-md overflow-hidden hover:shadow-xl transition"}>
+	<img src={post.image} alt={post.title} class={listMode ? "w-32 h-32 md:w-48 md:h-48 object-cover flex-shrink-0" : "w-full h-48 object-cover"} />
 	<div class={listMode ? "flex-1 py-6 pr-6 flex flex-col justify-center min-w-0" : "p-6"}>
 		{#if headingLevel === 'h2'}
 			<h2 class="text-2xl font-bold mb-2 text-gray-900 truncate">{post.title}</h2>

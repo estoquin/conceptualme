@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import PostCard from '$lib/components/PostCard.svelte';
-
 	let { data }: { data: PageData } = $props();
 	let listMode = $state(false);
 </script>
@@ -18,8 +17,8 @@
 				<p class="text-xl text-gray-600">Explore our collection of articles and tutorials</p>
 			</div>
 			<div class="flex gap-2 mt-2 md:mt-0 md:ml-4">
-				<button class="px-2 py-1 rounded bg-gray-600 text-white text-sm font-semibold hover:bg-gray-900 transition" onclick={() => listMode = false} title="Card View">&#9632;</button>
-				<button class="px-2 py-1 rounded bg-gray-600 text-white text-sm font-semibold hover:bg-gray-900 transition" onclick={() => listMode = true} title="List View">&#9776;</button>
+				<button class="px-2 py-1 bg-gray-400 text-white text-sm font-semibold hover:bg-gray-900 transition" onclick={() => listMode = false} title="Card View">&#9632;</button>
+				<button class="px-2 py-1 bg-gray-400 text-white text-sm font-semibold hover:bg-gray-900 transition" onclick={() => listMode = true} title="List View">&#9776;</button>
 			</div>
 		</div>
 	</section>

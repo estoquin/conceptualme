@@ -29,8 +29,8 @@
             <h2 class="text-2xl font-bold mb-4">Ready to Start Learning?</h2>
             <p class="text-gray-700 mb-6">Explore our collection of articles, tutorials, and insights designed to help you grow.</p>
             <div class="flex gap-4 justify-center">
-                <a href="/posts" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">View All Posts</a>
-                <a href="/about" class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-900 transition">Learn More About Us</a>
+                <a href="/posts" class="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-700 transition">View All Posts</a>
+                <a href="/about" class="bg-gray-800 text-white px-6 py-3 font-semibold hover:bg-gray-900 transition">Learn More About Us</a>
             </div>
         </section>
     </div>
