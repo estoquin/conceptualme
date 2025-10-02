@@ -1,0 +1,17 @@
+{
+  "tabWidth": 4,
+  "useTabs": false,
+  "printWidth": 200,
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": ["*.svelte", "*.html"],
+      "options": {
+        "tabWidth": 4,
+        "useTabs": false,
+        "singleAttributePerLine": false,
+        "printWidth": 200
+      }
+    }
+  ]
+}
