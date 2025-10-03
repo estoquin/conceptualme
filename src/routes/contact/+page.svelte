@@ -30,7 +30,7 @@
     <section class="bg-gray-100 shadow-md p-8">
         <h2 class="text-2xl font-bold mb-6">Send us a Message</h2>
         {#if submitted}
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 mb-4">
                 <p class="font-semibold">Thank you for your message!</p>
                 <p>We'll get back to you soon.</p>
             </div>
@@ -43,7 +43,7 @@
                     id="name"
                     bind:value={name}
                     required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full px-4 py-2 border border-gray-300 -lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your name"
                 />
             </div>
@@ -54,7 +54,7 @@
                     id="email"
                     bind:value={email}
                     required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full px-4 py-2 border border-gray-300 -lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="your.email@example.com"
                 />
             </div>
@@ -65,7 +65,7 @@
                     bind:value={message}
                     required
                     rows="6"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full px-4 py-2 border border-gray-300 -lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your message..."
                 ></textarea>
             </div>

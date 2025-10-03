@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { getAllCategories } from '$lib/database/manager';
+import { getAllCategories } from '$lib/database/categories';
 
 const ICON_MAP: Record<string, string> = {
     frontend: 'Code',

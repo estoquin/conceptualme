@@ -1,8 +1,11 @@
-
 <script lang="ts">
     import { fade, slide } from 'svelte/transition';
     export let navLinks: { href: string; label: string }[] = [];
     let menuOpen = false;
+
+    // add an admin link unless already present
+    const adminLink = { href: '/admin', label: 'Admin' };
+    $: menuLinks = navLinks.some(l => l.href === adminLink.href) ? navLinks : [...navLinks, adminLink];
 </script>
 
 <nav class="bg-gray-900 text-white shadow-lg">
@@ -16,20 +19,18 @@
                     </svg>
                 </button>
             </div>
-            <!-- Mobile overlay nav with transitions -->
             {#if menuOpen}
                 <div class="md:hidden">
                     <div class="fixed inset-0 z-40 bg-black bg-opacity-60" onclick={() => menuOpen = false} transition:fade></div>
                     <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900 flex flex-col gap-4 items-center py-8 shadow-lg" transition:slide={{ duration: 250 }}>
-                        {#each navLinks as link}
+                        {#each menuLinks as link}
                             <a href={link.href} class="hover:text-green-400 font-semibold text-xl transition" onclick={() => menuOpen = false}>{link.label}</a>
                         {/each}
                     </nav>
                 </div>
             {/if}
-            <!-- Desktop nav -->
             <div class="hidden md:flex flex-row gap-6 items-center w-auto">
-                {#each navLinks as link}
+                {#each menuLinks as link}
                     <a href={link.href} class="hover:text-green-400 font-semibold transition">{link.label}</a>
                 {/each}
             </div>
