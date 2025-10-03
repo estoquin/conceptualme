@@ -10,7 +10,7 @@
 		{ href: '/contact', label: 'Contact' }
 	];
 </script>
-<div class="h-full w-full flex flex-col">
+<div class="min-h-screen w-full flex flex-col">
 	<NavBar {navLinks} />
 	<main class="flex-grow">
 		{@render children?.()}

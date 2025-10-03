@@ -1,13 +1,33 @@
 <script lang="ts">
 	import PageContainer from '$lib/components/PageContainer.svelte';
-	import { Code, Server, Settings, Palette } from '@lucide/svelte';
+	import { 
+		Code, Server, Settings, Palette, Database, Shield, 
+		Cloud, Cpu, Smartphone, Globe, Atom, Box, Layers, 
+		Zap, GitBranch, Terminal, Brain, Bitcoin 
+	} from '@lucide/svelte';
+
 	const categories = [
 		{ name: 'Frontend', slug: 'frontend', icon: Code },
 		{ name: 'Backend', slug: 'backend', icon: Server },
 		{ name: 'DevOps', slug: 'devops', icon: Settings },
-		{ name: 'Design', slug: 'design', icon: Palette }
+		{ name: 'Design', slug: 'design', icon: Palette },
+		{ name: 'Databases', slug: 'databases', icon: Database },
+		{ name: 'Cybersecurity', slug: 'cybersecurity', icon: Shield },
+		{ name: 'Cloud Computing', slug: 'cloud', icon: Cloud },
+		{ name: 'Hardware & IoT', slug: 'hardware', icon: Cpu },
+		{ name: 'Mobile Development', slug: 'mobile', icon: Smartphone },
+		{ name: 'Networking', slug: 'networking', icon: Globe },
+		{ name: 'AI & Machine Learning', slug: 'ai-ml', icon: Brain },
+		{ name: 'Blockchain & Web3', slug: 'blockchain', icon: Bitcoin },
+		{ name: 'Automation & Robotics', slug: 'automation', icon: Zap },
+		{ name: 'Open Source', slug: 'open-source', icon: GitBranch },
+		{ name: 'Programming Languages', slug: 'languages', icon: Terminal },
+		{ name: 'Architecture & Patterns', slug: 'architecture', icon: Layers },
+		{ name: 'Emerging Tech', slug: 'emerging', icon: Atom },
+		{ name: 'Productivity Tools', slug: 'productivity', icon: Box }
 	];
 </script>
+
 
 <svelte:head>
 	<title>Categories - ConceptualMe</title>

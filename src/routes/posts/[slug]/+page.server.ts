@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { getPostBySlug } from '$lib/posts';
+import { getPostBySlug } from '$lib/database/manager';
 import { error } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async ({ params }) => {
