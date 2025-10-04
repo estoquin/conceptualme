@@ -2,7 +2,9 @@
 	let { children } = $props();
 	const items = [
 		{ href: '/admin/posts', label: 'Posts' },
-		{ href: '/admin/categories', label: 'Categories' }
+		{ href: '/admin/categories', label: 'Categories' },
+		{ href: '/admin/tags', label: 'Tags' },
+        { href: '/admin/comments', label: 'Comments' }
 	];
 </script>
 <div class="min-h-screen flex">

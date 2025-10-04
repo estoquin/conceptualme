@@ -1,52 +1,16 @@
 <script lang="ts">
+    import { goto } from '$app/navigation';
     import EntityLayout from '$lib/components/admin/EntityLayout.svelte';
 	export let data;
 	const posts = data.posts as any[];
 	const categories = data.categories as any[];
-
-	let editingId: number | null = null;
-	let newTitle = '';
-	let newExcerpt = '';
-	let newCategoryId = categories.length ? categories[0].id : 1;
-
-	// edit buffer
-	let editId: number | null = null;
-	let editTitle = '';
-	let editExcerpt = '';
-	let editCategoryId = 1;
-
-	let updateForm: HTMLFormElement | null = null;
-	let deleteForm: HTMLFormElement | null = null;
-	let deleteId: number | null = null;
-
-	function startEditing(post: any) {
-		editingId = post.id;
-		editId = post.id;
-		editTitle = post.title ?? '';
-		editExcerpt = post.excerpt ?? '';
-		editCategoryId = post.categoryId ?? (categories.length ? categories[0].id : 1);
-	}
-
-	function cancelEditing() {
-		editingId = null;
-		editId = null;
-	}
-
-	function submitUpdate() {
-		if (!updateForm) return;
-		// ensure hidden inputs are up-to-date (they are bound)
-		updateForm.requestSubmit();
-	}
-
-	function submitDelete(id: number) {
-		deleteId = id;
-		if (!deleteForm) return;
-		deleteForm.requestSubmit();
-	}
 </script>
 
 <EntityLayout>
-    <h1 class="text-2xl font-bold mb-4">Posts</h1>
+    <div class="flex gap-4 items-center mb-4 border-b border-gray-300 pb-2 justify-between">
+        <h1 class="text-2xl font-bold">Posts</h1>
+        <button class="hover:bg-green-500 py-0 px-10 bg-green-700 text-white" type="button" on:click={() => goto('/admin/posts/create')}>Crear</button>
+    </div>
     <table class="w-full border-collapse border border-gray-300">
     	<thead>
     		<tr>
@@ -61,42 +25,17 @@
     		{#each posts as post}
     			<tr>
     				<td class="border px-3 py-1">{post.id}</td>
+    				<td class="border px-3 py-1">{post.title}</td>
+    				<td class="border px-3 py-1">{post.excerpt}</td>
     				<td class="border px-3 py-1">
-    					{#if editingId === post.id}
-    						<input class="w-full" value={editTitle} on:input={(e) => (editTitle = (e.target as HTMLInputElement).value)} />
-    					{:else}
-    						{post.title}
-    					{/if}
+    					{#each categories as c}
+    						{#if c.id === post.categoryId}{c.name}{/if}
+    					{/each}
     				</td>
-    				<td class="border px-3 py-1">
-    					{#if editingId === post.id}
-    						<input class="w-full" value={editExcerpt} on:input={(e) => (editExcerpt = (e.target as HTMLInputElement).value)} />
-    					{:else}
-    						{post.excerpt}
-    					{/if}
-    				</td>
-    				<td class="border px-3 py-1">
-    					{#if editingId === post.id}
-    						<select class="w-full" bind:value={editCategoryId}>
-    							{#each categories as c}
-    								<option value={c.id}>{c.name}</option>
-    							{/each}
-    						</select>
-    					{:else}
-    						{#each categories as c}
-    							{#if c.id === post.categoryId}{c.name}{/if}
-    						{/each}
-    					{/if}
-    				</td>
-    				<td class="border px-3 py-1">
-    					{#if editingId === post.id}
-    						<button class="mr-2" type="button" on:click={submitUpdate}>Save</button>
-    						<button type="button" on:click={cancelEditing}>Cancel</button>
-    					{:else}
-    						<button class="mr-2" type="button" on:click={() => startEditing(post)}>Edit</button>
-    						<button type="button" on:click={() => submitDelete(post.id)}>Delete</button>
-    					{/if}
-    				</td>
+    				<td class="border flex">
+                        <button class="py-0 w-full hover:bg-orange-500 bg-orange-300 text-white" type="button" on:click={() => alert('Editando')}>Edit</button>
+                        <button class="py-0 w-full hover:bg-red-500 bg-red-300 text-white" type="button" on:click={() => alert('Eliminando')}>Delete</button>
+                    </td>
     			</tr>
     		{/each}
     	</tbody>
